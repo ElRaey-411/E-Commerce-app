@@ -2,9 +2,11 @@
 
 import 'package:flutter/material.dart';
 
-import '../../features/auth/forget_password.dart';
-import '../../features/auth/login.dart';
-import '../../features/auth/register.dart';
+import '../../features/auth/presentation/screens/change_password.dart';
+import '../../features/auth/presentation/screens/forget_password.dart';
+import '../../features/auth/presentation/screens/login.dart';
+import '../../features/auth/presentation/screens/register.dart';
+import '../../features/auth/presentation/screens/verification_code.dart';
 import '../../features/main_layout/main_layout.dart';
 import '../../features/onboarding/onboarding.dart';
 import '../../features/splash/splash.dart';
@@ -13,9 +15,12 @@ class RoutesManager {
   static const String login = "login";
   static const String register = "register";
   static const String forgetPassword = "forgetPassword";
+  static const String verificationCode = "verificationCode";
+  static const String changePassword = "changePassword";
   static const String mainLayout = "mainLayout";
   static const String onBoarding = "onBoarding";
-  static const String splash= "=splash";
+  static const String splash= "splash";
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splash:
@@ -31,6 +36,14 @@ class RoutesManager {
       case mainLayout:
         return MaterialPageRoute(
           builder: (context) => MainLayout(),
+        );
+        case verificationCode:
+        return MaterialPageRoute(
+          builder: (context) => VerificationCode(),
+        );
+        case changePassword:
+        return MaterialPageRoute(
+          builder: (context) => ChangePassword(),
         );
       default:
         return MaterialPageRoute(
