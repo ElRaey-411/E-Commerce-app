@@ -1,12 +1,11 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'config/theme_manager.dart';
+import 'core/di/get_it.dart';
 import 'core/resources/routes_manager.dart';
 
 void main() {
+  configureDependencies();
   runApp(ECommerce());
 }
 

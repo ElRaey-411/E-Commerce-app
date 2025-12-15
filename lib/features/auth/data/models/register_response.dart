@@ -1,0 +1,19 @@
+import 'package:e_commerce/features/auth/data/models/user.dart';
+class RegisterResponse {
+ const RegisterResponse({
+   required this.message,
+   required this.user,
+   required this.token,});
+
+ factory RegisterResponse.fromJson(dynamic json) {
+    return RegisterResponse(
+      message: json['message'],
+      user: User.fromJson(json['user']),
+      token: json['token'],
+    );
+  }
+ final String message;
+ final User user;
+ final String token;
+
+}
