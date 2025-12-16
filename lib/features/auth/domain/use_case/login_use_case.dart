@@ -8,7 +8,6 @@ import '../repo/auth_repo.dart';
 class LoginUseCase {
   AuthRepo authRepo;
   LoginUseCase({required this.authRepo});
-
   Future<Either<Failure, UserEntity>> call(LoginRequest request) {
     return authRepo.login(request);
   }
