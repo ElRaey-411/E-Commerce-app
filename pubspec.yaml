@@ -43,6 +43,8 @@ dependencies:
   get_it: ^9.2.0
   shared_preferences: ^2.5.4
   flutter_bloc: ^9.1.1
+  provider: ^6.1.5+1
+  fluttertoast: ^9.0.0
 
 dev_dependencies:
   flutter_test:

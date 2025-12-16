@@ -1,7 +1,7 @@
 import 'package:e_commerce/features/auth/data/models/user.dart';
 
 class LoginResponse {
-  LoginResponse({
+ const LoginResponse({
     required  this.message,
     required  this.user,
     required  this.token,});

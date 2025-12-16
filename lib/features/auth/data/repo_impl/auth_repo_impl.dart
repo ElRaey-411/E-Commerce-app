@@ -4,6 +4,7 @@ import 'package:e_commerce/core/errors/failure.dart';
 import 'package:e_commerce/features/auth/data/data_source/local_data_source/auth_local_data_source.dart';
 import 'package:e_commerce/features/auth/data/data_source/remote_data_source/auth_remote_data_source.dart';
 import 'package:e_commerce/features/auth/data/models/Login_request.dart';
+import 'package:e_commerce/features/auth/data/models/forget_password_request.dart';
 import 'package:e_commerce/features/auth/data/models/register_request.dart';
 import 'package:e_commerce/features/auth/domain/entities/user_entity.dart';
 import 'package:injectable/injectable.dart';
@@ -35,4 +36,36 @@ class AuthRepoImpl implements AuthRepo{
       return Left(Failure(message: exception.exception));
     }
   }
+
+  @override
+  Future<Either<Failure, void>> forgetPassword(ForgetPasswordRequest request)async {
+    try{
+      await authRemoteDataSource.forgetPassword(request);
+      return Right(null);
+    }on AppException catch (exception){
+      return Left(Failure(message: exception.exception));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> verifyCode(ForgetPasswordRequest request) async{
+    try{
+      await authRemoteDataSource.verifyCode(request);
+      return Right(null);
+    }on AppException catch (exception){
+      return Left(Failure(message: exception.exception));
+    }
+  }
+
+  @override
+  Future<Either<Failure, void>> resetPassword(ForgetPasswordRequest request) async{
+    try{
+      await authRemoteDataSource.resetPassword(request);
+      return Right(null);
+    }on AppException catch (exception){
+      return Left(Failure(message: exception.exception));
+    }
+  }
+
+
 }

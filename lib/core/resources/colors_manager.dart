@@ -6,5 +6,6 @@ abstract class ColorsManager {
   static const Color purple = Color(0xFF06004F);
   static const Color grey = Color(0xFF808080);
   static const Color red = Color(0xFFF44336);
+  static const Color green = Color(0xFF57AA53);
 
 }

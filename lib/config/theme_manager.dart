@@ -7,7 +7,7 @@ class ThemeManager {
   static final ThemeData light = ThemeData(
     scaffoldBackgroundColor: ColorsManager.blue,
     appBarTheme: AppBarTheme(
-      backgroundColor: ColorsManager.blue,
+      backgroundColor: Colors.transparent,
       elevation: 0,
       centerTitle: true,
       foregroundColor: ColorsManager.white,
