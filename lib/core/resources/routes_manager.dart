@@ -1,13 +1,15 @@
 
 
+import 'package:e_commerce/features/main_layout/presentation/provider/main_layout_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../features/auth/presentation/screens/change_password.dart';
 import '../../features/auth/presentation/screens/forget_password.dart';
 import '../../features/auth/presentation/screens/login.dart';
 import '../../features/auth/presentation/screens/register.dart';
 import '../../features/auth/presentation/screens/verification_code.dart';
-import '../../features/main_layout/main_layout.dart';
+import '../../features/main_layout/presentation/main_layout.dart';
 import '../../features/onboarding/onboarding.dart';
 import '../../features/splash/splash.dart';
 
@@ -35,7 +37,9 @@ class RoutesManager {
         return MaterialPageRoute(builder: (_) => ForgetPassword());
       case mainLayout:
         return MaterialPageRoute(
-          builder: (context) => MainLayout(),
+          builder: (context) => ChangeNotifierProvider(
+              create: (context) => MainLayoutProvider(),
+              child: MainLayout()),
         );
         case verificationCode:
         return MaterialPageRoute(

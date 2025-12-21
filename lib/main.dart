@@ -30,7 +30,7 @@ class ECommerce extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         onGenerateRoute: RoutesManager.generateRoute,
-        initialRoute: RoutesManager.login,
+        initialRoute: RoutesManager.mainLayout,
         theme: ThemeManager.light,
         themeMode: ThemeMode.light,
       ),
