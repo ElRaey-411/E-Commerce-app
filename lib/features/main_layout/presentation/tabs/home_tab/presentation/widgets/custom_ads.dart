@@ -41,49 +41,46 @@ class _CustomAdsWidgetState extends State<CustomAdsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: REdgeInsets.symmetric(horizontal: 16),
-      child: Stack(
-        children: [
-          AnimatedSwitcher(
-            duration: animationDuration,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(16),
-              child: Image.asset(
-                widget.adsImages[_currentIndex],
-                key: ValueKey(_currentIndex),
-                height: 210.h,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
+    return Stack(
+      children: [
+        AnimatedSwitcher(
+          duration: animationDuration,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Image.asset(
+              widget.adsImages[_currentIndex],
+              key: ValueKey(_currentIndex),
+              height: 210.h,
+              width: double.infinity,
+              fit: BoxFit.cover,
             ),
           ),
-          SizedBox(
-            height: 210.h,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: List.generate(
-                widget.adsImages.length,
-                    (index) => Container(
-                  width: 8.w,
-                  height: 8.h,
-                  margin: EdgeInsets.symmetric(
-                    horizontal: 4.w,
-                    vertical: 12.h,
-                  ),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: _currentIndex == index
-                        ? ColorsManager.blue
-                        : ColorsManager.grey,
-                  ),
+        ),
+        SizedBox(
+          height: 210.h,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: List.generate(
+              widget.adsImages.length,
+                  (index) => Container(
+                width: 8.w,
+                height: 8.h,
+                margin: EdgeInsets.symmetric(
+                  horizontal: 4.w,
+                  vertical: 12.h,
+                ),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: _currentIndex == index
+                      ? ColorsManager.blue
+                      : ColorsManager.grey,
                 ),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -27,7 +27,12 @@ class ThemeManager {
         color: ColorsManager.white,
         fontSize: 16.sp,
         fontWeight: FontWeight.w300,
-      )
+      ),
+      headlineMedium: TextStyle(
+        color: ColorsManager.purple,
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w600,
+      ),
     ),
     inputDecorationTheme: InputDecorationThemeData(
       suffixIconColor: ColorsManager.grey,
@@ -38,9 +43,7 @@ class ThemeManager {
       ),
       filled: true,
       fillColor: ColorsManager.white,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15.r),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.r)),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(15.r),
       ),
