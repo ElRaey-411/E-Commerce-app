@@ -33,6 +33,11 @@ class ThemeManager {
         fontSize: 18.sp,
         fontWeight: FontWeight.w600,
       ),
+      headlineSmall: TextStyle(
+        color: ColorsManager.purple,
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w500,
+      )
     ),
     inputDecorationTheme: InputDecorationThemeData(
       suffixIconColor: ColorsManager.grey,
